@@ -41,16 +41,19 @@ function App() {
   }, []);
 
   useEffect(() => {
-    pokemonList[pokemonIndex].name === "pikachu" ?
-    alert("pika pikachu !!!") : "";
-  }
-
-  )
+    pokemonList[pokemonIndex].name === "pikachu"
+      ? alert("pika pikachu !!!")
+      : "";
+  });
 
   return (
     <>
       <div>
-        <Navbar increment={increment} decrement={decrement} />
+        <Navbar
+          pokemonList={pokemonList}
+          pokemonIndex={pokemonIndex}
+          setPokemonIndex={setPokemonIndex}
+        />
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       </div>
     </>
